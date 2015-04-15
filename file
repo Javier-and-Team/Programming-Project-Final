@@ -1,0 +1,14 @@
+#Should I skip class today?
+x=0
+##each answer will add a certain amount of "points" to a variable. When
+##it reaches a certain level it will determine if you should or should not skip.
+name = str(input("What is your name?"))
+className = str(input("What class do you have?"))
+
+grade = input("What is your grade in " + className +"?")
+
+##factor in grade. how screwed are you?
+##is there a test
+##is there any other important stuff to do in class
+##does the teacher take attendance? How often do you attend class
+##Can you give the teacher a legit excuse for missing class?
