@@ -5,20 +5,22 @@ x=0
 name = str(input("What is your name?"))
 className = str(input("What class do you have?"))
 
-def GPA
 grade = input("What is your grade in " + className +"?")
-acceptableInputs = {a, b, c, d, f, A, B, C, D, F,
-lettergrades = {a, b, c, d, f}
-if grade.lower in lettergrade :
-    for grades in lettergrades :
-        a = 4
-        b = 3
-        c = 2
-        d = 1
-        f = -100
-    if grade.lower not in lettergrades :
-        if grade < 60:
-                    
+lettergrades.lower = ["a", "b", "c", "d", "f"]
+    
+if grade in lettergrades :
+    if grade < 60:
+        grades = f
+    if grade >= 60 and grade < 70:
+        grades = d
+    if grade >= 70 and grade < 80:
+        grades = c
+    if grade >= 80 and grade < 90:
+        grades = b
+    if grade >= 90 and grade < 100:
+        grades = a
+            
+                        
 ##factor in grade. how screwed are you?
 ##is there a test
 ##is there any other important stuff to do in class
