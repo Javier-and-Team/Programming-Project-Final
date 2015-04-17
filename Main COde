@@ -1,0 +1,194 @@
+# Programmed by, Javier Ruiz Campos, Ori Slovonia, Brendon O' Rourke, Austin Wise, and Ronny Rosario
+
+
+##A program to prioritize your time ( or the next day)
+##Lists of variables that are accepted responses for the questions asked to get input
+##each individual variable will be given weight by a point sytem, where when added
+##and subtracted from a variable, x=60 , where  x>60 --> go to class, and
+##when   x<100  --> you dont have to go to class
+
+score = 0
+
+Name = str(input("What is your name? :"))
+
+###Social Life 1--------------------------------------------------------------------------------
+SclLife = str(input("How would you describe your social life, " + Name + "? (manic, active, mellow, dull, lazy, non-existant)"))
+
+if SclLife == "manic":
+    score += 10
+elif SclLife == "active":
+    score += 8
+elif SclLife == "mellow":
+    score += 6
+elif SclLife == "dull":
+    score += 4
+elif SclLife == "lazy":
+    score += 2
+elif SclLife == "non-existant":
+    score += 0
+else:
+    SclLife == ""
+
+
+
+###Sleep 2--------------------------------------------------------------------------
+
+sleep = int(input(" How many hours of sleep did you get last night?" ))
+if 0<= sleep and sleep < 4:
+    score += 4
+elif sleep >=4 and sleep < 7:
+    score += 6
+elif sleep >=7 and sleep < 10:
+    score += 10
+elif sleep >= 10:
+    score += 8
+else:
+    sleep == ""
+
+
+###Sobriety 3-------------------------------------------------------------------------------------------------------------------------------------
+sobriety = str(input("How sober are you?Are you intoxicated, hungover, or sober?"))
+
+ 
+if sobriety == "intoxicated":  
+    intoxicated = str(input("How intoxicated are you,? (hammered, drunk, tipsy, buzzed)"))
+    if intoxicated == "hammered":
+        score += 1
+    elif intoxicated == "drunk":
+        score += 3
+    elif intoxicated == "tipsy":
+        score += 5
+    elif intoxicated == "buzzed":
+        score += 6
+    else:
+        sobriety
+elif sobriety == "hungover":
+    score += 4
+    
+else:
+    score += 10
+
+
+###Hunger 4---------------------------------------------------------------------------------------------------------------------------------------
+
+hunger = str(input("How hungry are you? Are you starving, hungry, or not hungry"))
+if hunger == "starving":
+    score += 3 
+elif hunger == "hungry":
+    score += 6
+elif hunger == "not hungry":
+    score += 10
+
+###Emotion 5--------------------------------------------------------------------------------------------------------------------------------------
+
+emotion = str(input("How do you feel today, " + Name +" are you feeling very bad, bad, fair, good, or fantastic."))
+
+if emotion == "very bad":
+    score += 2
+elif emotion == "bad":
+    score += 4
+elif emotion == "fair":
+    score += 6
+elif emotion == "good":
+    score += 8
+elif emotion == "fantastic":
+    score += 10
+
+
+###Responsibilities 6-----------------------------------------------------------------------------------------------------------------------------
+
+resp = int(input("How pre-occupied are you from 0 to 10?"))
+
+if resp == 10:
+    score += 0
+elif resp == 9:
+    score +=2
+elif resp <= 8 and resp> 6:
+    score += 4
+elif resp <=6 and resp > 4:
+    score += 6
+elif resp <= 4 and resp>2:
+    score += 8
+elif resp <=2 and resp >0:
+    score +=10
+print(score)
+
+
+###assignments----------------------------------------------------------------------------------------------------------------------------------
+
+Red = int(input("How many assignments do you have due tomorrow?"))
+if Red >= 3:
+    score += 1
+elif Red == 2:
+    score += 4
+elif Red ==1:
+    score += 8
+elif Red == 0:
+    score += 10
+Yellow = int(input("How many assignments do you have due in two days?"))
+if Yellow >= 6 :
+             score +=1
+elif Yellow == 5 or Yellow ==4:
+             score +=4
+elif Yellow == 3 or Yellow  == 2:
+             score += 8
+elif Yellow == 1 and Yellow ==0:
+             score += 10
+            
+Green = int(input("How many assignments do you have due in three days?"))
+if Green >= 8:
+    score +=0
+elif Green == 7 or Green == 6 or Green ==5:
+    score +=4
+elif Green == 4 or Green == 3 or Green == 2:
+    score += 6
+elif Green == 1 or  Green == 0:
+    score += 10
+
+
+###Motivation--------------------------------------------------------------------------------------
+
+motivation = input("How motivated are you right now? Unmotivated, neutral, motivated")
+if motivation == "unmotivated":
+                 score += 2
+elif motivation == "neutral":
+                 score += 6
+elif motivation == "motivated":
+                 score += 10
+
+
+#Class----------------------------------------------------------------------------------------------------------------------------------------
+
+className = input("What class do you have?")
+time = input(" At what time of day is the class?")
+length= int(input("How many hours long is the class?"))
+if length <= 1:
+            score += 0
+elif length >= 1:
+            score += 5
+grade = input("What is your letter grade in " + className +"?")
+if grade == "A" or "a":
+            score += -10
+elif grade == "B" or "b":
+            score += -5
+elif grade == "C" or "c":
+            score += 0
+elif grade == "D" or "d":
+            score += 5
+elif grade == "F" or "f":
+            score += 10
+            
+credit_hours= int(input("How many credit hours is the class?"))
+if credit_hours > 2:
+                  score += 5
+else:
+                  score += 0
+attendence =input("How many times have you missed " + className+"?")
+knowledge =input("How confident are you in your knowledge in " + className +"?")
+att_grade =input("How much percentage is attendence worth in " + className + "?")
+
+if score > 40:
+    print("You should probably go to your " + className + " class")
+elif score < 40:
+    print(" There is little risk involved in skipping " +className + "class to study or do other assignments.")
+
